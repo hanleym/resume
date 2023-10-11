@@ -1,117 +1,159 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Michael Hanley</title>
-	<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700,900" rel="stylesheet">
-	<link href='/css/main.css' rel='stylesheet'>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="/main.css">
 </head>
-<body class="page">
-	<div id="root">
-		<header id="header" class="header-container">
-			<div class="site-header">
-				<p class="site-description"></p>
-			</div>
-		</header>
-
-<section id="main">
-	<h1 id="title">Michael Hanley</h1>
-	<div>
-		<article id="content">
-		 
-
-<p>9849 Stephenson Drive<br />
-Trinity, FL 34655<br />
-(727) 403-1859<br />
-me@hanleym.com<br /></p>
-
-<h2 id="synopsis">Synopsis</h2>
-
-<p>Driven systems &amp; software engineer experienced at designing, developing, and maintaining scalable, stable, and user-friendly web and network applications. Regularly researching emerging technologies to provide the most modern and creative solutions. Ability to effectively manage &amp; test projects, provide support and create user and technical documentation.</p>
-
-<p>Currently specializing in Go development.</p>
-
-<p>Languages: Go, TypeScript, Javascript, C#, PHP, Lua, Python<br />
-Technologies: Git, nginx, gRPC, Kubernetes, Docker, React / Redux, Webpack, Lodash<br />
-Databases: PostgreSQL, MariaDB, MySQL, RethinkDB, InfluxDB, MongoDB, Redis, Memcached<br />
-Operating Systems: Linux (Debian, Arch, CentOS, RedHat), Mac OS X, Windows</p>
-
-<h2 id="work-history">Work History</h2>
-
-<p>Senior Systems &amp; Software Engineer - June 2012 to Present<br />
-nThrive - Fully Remote</p>
-
+<body>
+	<main>
+	<!-- <section class="section"> -->
+		<!-- <div class="container"> -->
+		
+<div class="resume">
+	<h1 id="michael-hanley">Michael Hanley</h1>
+<p><a href="mailto:me@hanleym.com">me@hanleym.com</a> | <a href="tel:+17274031859">(727) 403-1859</a></p>
+<p>As a dedicated and driven Software Engineer with 15 years of experience, my journey has been defined by a relentless pursuit of confronting intricate technical challenges through system and software development. My career has been marked by a commitment to continuous learning, staying at the forefront of emerging technologies, and weaving them into the fabric of my extensive expertise. With a proven ability to manage projects effectively, conduct thorough testing, provide comprehensive support, and create user-friendly technical documentation, I bring a holistic approach to software engineering. This combination of passion, expertise, and adaptability allows me to deliver robust and creative solutions, making me a valuable asset to any team.</p>
+<h2 id="skills">Skills</h2>
+<ul>
+<li><strong>Languages:</strong> Rust, Go, TypeScript, JavaScript, Python, Dart, C#, Lua</li>
+<li><strong>Databases:</strong> SQL (PostgreSQL &amp; MySQL), DynamoDB, ElasticSearch, InfluxDB, SurrealDB, RethinkDB, MongoDB</li>
+<li><strong>Protocols / Serialization:</strong> HTTP, GraphQL, gRPC / Protobuf, MQTT, Syslog, JSON</li>
+<li><strong>Messaging:</strong> NATS, SQS, SNS</li>
+<li><strong>Operating Systems:</strong> NixOS, Arch, Ubuntu / Debian, RHEL / Fedora, MacOS, Windows</li>
+<li><strong>Infrastructure:</strong> Nix, Kubernetes, Containers, AWS, Terraform</li>
+</ul>
+<h2 id="experience">Experience</h2>
+<h3 id="tably-remote">Tably - Remote</h3>
+<h4 id="senior-software-engineer-august-2022-to-may-2023">Senior Software Engineer - August 2022 to May 2023</h4>
+<ul>
+<li>Developed a <a href="https://www.notion.so/">Notion</a> style (block-based) editor for use in a web-based interactive computing platform (vaguely similar to <a href="https://jupyter.org/">Jupyter Notebook</a>).
+<ul>
+<li>Written in Rust, utilizing <a href="https://sycamore-rs.netlify.app/">Sycamore</a> and a proprietary (planned to be open-source) operational transform implementation.</li>
+</ul>
+</li>
+</ul>
+<h3 id="knowbe4-hybrid-clearwater-florida-us">KnowBe4 - Hybrid (Clearwater, Florida, US)</h3>
+<h4 id="senior-software-engineer-november-2017-to-july-2022">Senior Software Engineer - November 2017 to July 2022</h4>
+<ul>
+<li>Designed and developed a replacement <a href="http://www.simplecloud.info/">SCIM</a> implementation capable of handling large bursts of traffic.
+<ul>
+<li>The previous system (a modified open-source solution) was unable to handle the throughput required by our larger customers. The service would run out of memory due to a combination of architecture and memory management oversights, causing outages and incurring considerable costs.</li>
+<li>Proposed and led the adoption of Rust for the replacement due to its solid performance and predictable memory management.</li>
+<li>Written in Rust, utilizing API Gateway, Lambda, and DynamoDB.</li>
+<li>Upon release of the project, it handled 2.5 million invocations per day with bursts of over 7 thousand invocations in a one-minute window. Additionally, the serverless architecture isolated issues caused by individual customers and reduced costs by an order of magnitude.</li>
+</ul>
+</li>
+<li>Designed and developed the backend for <a href="https://www.knowbe4.com/compliance-audit-readiness-assessment">Compliance Audit Readiness Assessment (CARA)</a>, a free tool allowing prospective clients to assess their readiness to meet <a href="https://www.acq.osd.mil/cmmc/">CMMC</a> requirements.
+<ul>
+<li>Given my track record of rapidly and reliably delivering numerous similar projects, was asked to step in and build the backend for a team that was struggling and unlikely to make an important and inflexible deadline.</li>
+<li>Written in Python, utilizing GraphQL, API Gateway, Lambda, and S3.</li>
+<li>The project was completed by the deadline, and the implementation was clean &amp; robust enough to be handed off successfully and eventually be adopted as the starting point for the team's future microservices.</li>
+</ul>
+</li>
+<li>Designed and developed internal integration microservices to continually scan existing customers' domains with <a href="https://www.knowbe4.com/email-exposure-check/">EEC</a> and synchronize the results to both the product and data science pipelines.
+<ul>
+<li>Written in Go, utilizing Step Functions, Lambda, SNS, and S3.</li>
+<li>Runs about 67 thousand state machines to scan over 130 thousand domains each month.</li>
+</ul>
+</li>
+<li>Designed and developed a replacement <a href="https://www.virustotal.com/">VirusTotal</a> integration for <a href="https://www.knowbe4.com/products/phisher">PhishER</a> allowing customers to reliably scan URLs and attachments sent to PhishER with VirusTotal.
+<ul>
+<li>The previous system wasn't robust enough to handle the various constraints (imposed by both the business requirements and VirusTotal rate limiting).</li>
+<li>Written in Go, utilizing Lambda, and DynamoDB.</li>
+<li>Handles over 3 million requests with over 8 million Lambda invocations per month.</li>
+</ul>
+</li>
+<li>Assisted with the internal email service design and migration.
+<ul>
+<li>Contributed to design decisions and performed code reviews.</li>
+<li>Ported the project from MySQL to PostgreSQL due to limitations found in MySQL around performance and transactions.</li>
+<li>Written in Go, utilizing Fargate, Arora, and SQS.</li>
+<li>Used across the company to send over 40 million emails per month.</li>
+</ul>
+</li>
+<li>Individually designed and developed (frontend and backend) the <a href="https://www.knowbe4.com/products/phisher">PhishER</a>: <a href="https://map.knowbe4.com/">Threat Map</a>; a live map of phishing attacks targeted at our customers.
+<ul>
+<li>Written in Go &amp; JavaScript, utilizing Fargate, SQS, WebSockets, VueJS, and Canvas.</li>
+<li>Used primarily for marketing. Handled over 3 million subscriptions the final month it was on the company homepage (replaced by a simulated view with a link to the live view to reduce costs).</li>
+</ul>
+</li>
+<li>Designed and developed many of the core backend services for <a href="https://www.knowbe4.com/products/phisher">PhishER</a>; specifically the rule evaluation engine, <a href="https://virustotal.github.io/yara/">Yara</a> integration, and Syslog integration.
+<ul>
+<li>Written in Go, utilizing <a href="https://en.wikipedia.org/wiki/Consistent_hashing">Consistent Hashing</a>, <a href="https://aws.amazon.com/fargate/">Fargate</a>, <a href="https://aws.amazon.com/elasticloadbalancing/network-load-balancer/">ELB/NLB</a>, <a href="https://grpc.io/">gRPC</a>, <a href="https://developers.google.com/protocol-buffers">Protobuf</a>, <a href="https://yara.readthedocs.io/en/stable/capi.html">libyara</a>, and the TCP, UDP, and TLS packages from the standard library.</li>
+<li>Helped invent and patent (<a href="https://patents.google.com/patent/US10812507B2/">US10812507B2</a>) a method for efficiently processing characteristic detection rules in a rule set.</li>
+</ul>
+</li>
+<li>Designed and developed the backend services for many of the free tools created at KnowBe4, including <a href="https://www.knowbe4.com/email-exposure-check/">Email Exposure Check</a> v2, <a href="https://www.knowbe4.com/weak-password-test">Weak Password Test</a> v2, <a href="https://www.knowbe4.com/breached-password-test">Breached Password Test</a>, <a href="https://www.knowbe4.com/password-exposure-test">Password Exposure Test</a>, <a href="https://www.knowbe4.com/second-chance">Second Chance</a> v2, and <a href="https://www.hanleym.com/resume/multi-factor-authentication-security-assessment">Multi-factor Authentication Security Assessment</a>
+<ul>
+<li>Written in Go, utilizing <a href="https://aws.amazon.com/fargate/">Fargate</a>, <a href="https://aws.amazon.com/elasticloadbalancing/network-load-balancer/">ELB/NLB</a>, <a href="https://grpc.io/">gRPC</a>, <a href="https://developers.google.com/protocol-buffers">Protobuf</a>, and may of the cryptography packages from the standard library.</li>
+</ul>
+</li>
+</ul>
+<h3 id="finthrive-remote">FinThrive - Remote</h3>
+<h4 id="senior-systems-software-engineer-june-2012-to-november-2017">Senior Systems &amp; Software Engineer - June 2012 to November 2017</h4>
 <ul>
 <li>Designed and developed a proprietary lesson format allowing for engaging and interactive education to reach millions of learners on a wide variety of devices.
-
 <ul>
-<li>Written in Javascript utilizing React, Redux, Material Design, SCORM, and xAPI.</li>
-<li>Used for 1,696 lessons taken by millions of medical professionals.</li>
-</ul></li>
+<li>Written in JavaScript, utilizing React, Redux, Material Design, SCORM, and xAPI.</li>
+<li>Used for over 1,696 lessons taken by millions of medical professionals.</li>
+</ul>
+</li>
 <li>Designed and developed an automated lesson building and packaging system that increased productivity dramatically.
-
 <ul>
-<li>Written in Go utilizing ffmpeg, imagemagick, ghostscript, and inotify.</li>
+<li>Written in Go, utilizing ffmpeg, imagemagick, ghostscript, and inotify.</li>
 <li>Used to build 1,073 lessons with a combined 3,619 interactives.</li>
-</ul></li>
+</ul>
+</li>
 <li>Designed and developed a mobile (iOS and Android) application to simplify and search complex hierarchies of medical codes.
-
 <ul>
-<li>Written in Javascript utilizing Titanium.</li>
+<li>Written in JavaScript, utilizing Titanium.</li>
 <li>Reached 67th Globally and 1st in Medical on the App Store for several months.</li>
-</ul></li>
+</ul>
+</li>
 <li>Modified and administered an existing learning management system (LMS) allowing it to scale to hundreds of thousands of learners.
-
 <ul>
 <li>Initial modifications in PHP; later, a Go microservice architecture was adopted.</li>
 <li>Scaling required rewriting core logic, as well as implementing load balancing (HAProxy + Nginx), caching (Redis), and a distributed filesystem (Ceph.)</li>
-</ul></li>
-<li>Contributed to a mobile ready web application allowing physicians and hospital staff to purchase and stream educational seminars and other videos live or on-demand.
-
-<ul>
-<li>Backend in Go utilizing Authorize.net, RethinkDB (migrated from MongoDB,) and ffmpeg.</li>
-<li>Frontend in Javascript utilizing AngularJS, VideoJS, and xAPI.</li>
-</ul></li>
 </ul>
-
-<p>Software Engineer - March 2010 to June 2012<br />
-Focus School Software - St. Petersburg, Florida</p>
-
+</li>
+<li>Contributed to a mobile ready web application allowing physicians and hospital staff to purchase and stream educational seminars and other videos live or on-demand.
+<ul>
+<li>Backend in Go, utilizing Authorize.net, RethinkDB (migrated from MongoDB,) and ffmpeg.</li>
+<li>Frontend in JavaScript, utilizing AngularJS, VideoJS, and xAPI.</li>
+</ul>
+</li>
+</ul>
+<h3 id="focus-school-software-st-petersburg-florida">Focus School Software - St. Petersburg, Florida</h3>
+<h4 id="software-engineer-march-2010-to-june-2012">Software Engineer - March 2010 to June 2012</h4>
 <ul>
 <li>Modified core database functions significantly increasing the performance of the entire application.
-
 <ul>
-<li>Written in PHP; used recursion to replace the existing eval() loops.</li>
+<li>Used recursion to replace existing calls to <code>eval()</code>.</li>
 <li>Performance increase of ~16% across the application.</li>
-</ul></li>
-<li>Modified escaping and input libraries to remove existing security vulnerabilities.
-
+</ul>
+</li>
+<li>Modified escaping and input libraries to patch security vulnerabilities.
 <ul>
-<li>Identified problems in existing regex escaping strategy and replaced with the appropriate database escape calls.</li>
-</ul></li>
-<li>Developed algorithms used to automatically generate, compare (diff) and update reports sent to the department of education majorly enhancing usability and increasing efficiency.
-
+<li>Identified and demonstrated vulnerabilities in the existing regex escaping strategy and led the effort to use the appropriate database escape calls.</li>
+</ul>
+</li>
+<li>Developed algorithms used to automatically generate, compare, and update reports sent to the department of education majorly enhancing usability and increasing efficiency.
 <ul>
 <li>Written in PHP; interfaced with legacy government mainframe systems.</li>
-</ul></li>
+</ul>
+</li>
 <li>Implemented memcached to reduce the total number of queries executed.
-
 <ul>
 <li>Reduced page load times by as much as 35%.</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
-<p>Internship - June 2008 to August 2009<br />
-Pinellas County Schools - Largo, Florida</p>
+</div>
 
-<ul>
-<li>Developed an interface and API allowing custom reports to be created using SQL Reporting Services and displayed inside a web application.</li>
-<li>Developed a single-sign-on application relieving users from the burden of logging into multiple web applications with different credentials.</li>
-</ul>
-
-		</article>
-	</div>
-</section>
-
-
-
+		<!-- </div> -->
+	<!-- </section> -->
+	</main>
+</body>
+</html>
