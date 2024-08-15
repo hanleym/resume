@@ -17,6 +17,10 @@ As a dedicated and driven Software Engineer with 15 years of experience, my jour
 ### Calamu - Remote
 #### Senior Software Engineer - November 2023 to Present
 
+ - Designed and developed a a Nix CI/CD build system to replace existing shell scripts that were used to copy directly from developer machines to production environments. These changes ensure builds / deployments are immutable and deterministic.
+ - Helped replace multiple AWS services (Fargate, Lambda, DynamoDB, Neptune, etc...) with Kubernetes and SurrealDB. These changes massively reduced operating costs and enabled the product to be deployed to multi-cloud and on-premises environments. 
+ - Individually designed and developed a Rust S3 benchmark tool to allow us to more accurately see our product's performance improvements and compare against AWS and other S3 compatible providers.
+
 ### Tably - Remote
 #### Senior Software Engineer - August 2022 to May 2023
 
