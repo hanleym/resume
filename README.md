@@ -2,91 +2,101 @@
 
 [me@hanleym.com](mailto:me@hanleym.com)
 
-As a dedicated and driven Software Engineer with 15 years of experience, my journey has been defined by a relentless pursuit of confronting intricate technical challenges through system and software development. My career has been marked by a commitment to continuous learning, staying at the forefront of emerging technologies, and weaving them into the fabric of my extensive expertise. With a proven ability to manage projects effectively, conduct thorough testing, provide comprehensive support, and create user-friendly technical documentation, I bring a holistic approach to software engineering. This combination of passion, expertise, and adaptability allows me to deliver robust and creative solutions, making me a valuable asset to any team.
+Principal Software Engineer with 15+ years of experience designing distributed systems, CI/CD infrastructure, and backend services in Rust, Go, and C#.
+Deep expertise in NixOS, Kubernetes, and cloud, on-prem, and hybrid architectures.
+Architect and hands-on engineer with a proven record of improving reliability, cutting costs, and leading high-impact technical transformations.
+
 
 ## Skills
-- **Languages:** Rust, Go, TypeScript, JavaScript, Python, Dart, C#, Lua
-- **Databases:** SQL (PostgreSQL & MySQL), DynamoDB, ElasticSearch, InfluxDB, SurrealDB, RethinkDB, MongoDB
-- **Protocols / Serialization:** HTTP, GraphQL, gRPC / Protobuf, MQTT, Syslog, JSON
-- **Messaging:** NATS, SQS, SNS
-- **Operating Systems:** NixOS, Arch, Ubuntu / Debian, RHEL / Fedora, MacOS, Windows
-- **Infrastructure:** Nix, Kubernetes, Containers, AWS, Terraform
+
+- **Languages:** Rust, Go, C#, TypeScript/JavaScript, Python
+- **Data Systems:** PostgreSQL, MySQL/TiDB, SurrealDB, TiKV, DynamoDB, Prometheus, Redis
+- **Protocols & Messaging:** HTTP, GraphQL, gRPC/Protobuf, OpenTelemetry, MQTT, JSON, Syslog, SQS, SNS
+- **Infrastructure & DevOps:** Nix/NixOS, Kubernetes, Docker, Terraform, AWS, Linux
+
+
 
 ## Experience
 
 ### Calamu - Remote
-#### Senior Software Engineer - November 2023 to Present
+#### Principal Software Engineer - November 2023 to October 2025
 
- - Designed and developed a Nix CI/CD build system to replace existing shell scripts that were used to copy directly from developer machines to production environments. These changes ensure builds / deployments are immutable and deterministic.
- - Helped replace multiple AWS services (Fargate, Lambda, DynamoDB, Neptune, etc...) with Kubernetes and SurrealDB. These changes massively reduced operating costs and enabled the product to be deployed to multi-cloud and on-premises environments. 
- - Individually designed and developed a Rust S3 benchmark tool to allow us to more accurately see our product's performance improvements and compare against AWS and other S3 compatible providers.
+- Built a fully declarative Nix-based CI/CD system for both cloud and on-prem deployments.
+  - Leveraged Nix, NixOS GitHub self-hosted runners, distributed binary caches, and remote (distributed) builds to generate and deploy NixOS configurations, Docker images, Terraform, and Kubernetes YAML.
+  - Achieved reproducible, deterministic builds with significant speed and reliability gains.
+- Discovered and demonstrated a critical vulnerability, responsibly disclosed it, and led a complete architectural redesign.
+  - Delivered high-performance cross-platform implementations in Rust and C#.
+  - Eliminated the flaw and improved throughput.
+- Developed a TUI for provisioning on-prem clusters.
+  - Implemented in Rust with Nix-based deployment.
+  - Reduced provisioning time to under 15 minutes.
+- Developed a distributed execution engine in C#, then built migration and purge features on top of it.
+  - Implemented durable queuing, retries, and coordination between backend services and distributed agents.
+  - Supported seamless data migration across AWS S3, GCP, Azure Blob, and S3-compatible services.
+- Built a Rust-based benchmarking suite for comparing S3-compatible services.
+  - Measured performance data for regression tracking and product validation.
+- Re-architected infrastructure to replace an expensive and fragmented AWS stack (Fargate, Lambda, DynamoDB, Neptune).
+  - Migrated to Kubernetes and SurrealDB/TiKV, achieving a 10x cost reduction and multi-cloud/on-prem portability.
+  - Featured in SurrealDB's case study: [Storing cybersecurity data at scale with SurrealDB](https://surrealdb.com/customer/calamu)
 
 ### Tably - Remote
 #### Senior Software Engineer - August 2022 to May 2023
 
-- Developed a [Notion](https://www.notion.so/) style (block-based) editor for use in a web-based interactive computing platform (vaguely similar to [Jupyter Notebook](https://jupyter.org/)).
-  - Written in Rust, utilizing [Sycamore](https://sycamore-rs.netlify.app/) and a proprietary (planned to be open-source) operational transform implementation.
+- Developed a Notion-style block editor for an interactive web-based computing platform (conceptually similar to Jupyter Notebook).
+  - Implemented in Rust using Sycamore and a proprietary operational transform engine.
+  - Delivered real-time synchronization and structured data editing across users.
 
-### KnowBe4 - Hybrid (Clearwater, Florida, US)
+### KnowBe4 - Hybrid (Clearwater, FL)
 #### Senior Software Engineer - November 2017 to July 2022
-  
-- Designed and developed a replacement [SCIM](http://www.simplecloud.info/) implementation capable of handling large bursts of traffic.
-  - The previous system (a modified open-source solution) was unable to handle the throughput required by our larger customers. The service would run out of memory due to a combination of architecture and memory management oversights, causing outages and incurring considerable costs.
-  - Proposed and led the adoption of Rust for the replacement due to its solid performance and predictable memory management.
-  - Written in Rust, utilizing API Gateway, Lambda, and DynamoDB.
-  - Upon release of the project, it handled 2.5 million invocations per day with bursts of over 7 thousand invocations in a one-minute window. Additionally, the serverless architecture isolated issues caused by individual customers and reduced costs by an order of magnitude.
-- Designed and developed the backend for [Compliance Audit Readiness Assessment (CARA)](https://www.knowbe4.com/compliance-audit-readiness-assessment), a free tool allowing prospective clients to assess their readiness to meet [CMMC](https://www.acq.osd.mil/cmmc/) requirements.
-  - Given my track record of rapidly and reliably delivering numerous similar projects, was asked to step in and build the backend for a team that was struggling and unlikely to make an important and inflexible deadline.
-  - Written in Python, utilizing GraphQL, API Gateway, Lambda, and S3.
-  - The project was completed by the deadline, and the implementation was clean & robust enough to be handed off successfully and eventually be adopted as the starting point for the team's future microservices.
-- Designed and developed internal integration microservices to continually scan existing customers' domains with [EEC](https://www.knowbe4.com/email-exposure-check/) and synchronize the results to both the product and data science pipelines.
-  - Written in Go, utilizing Step Functions, Lambda, SNS, and S3.
-  - Runs about 67 thousand state machines to scan over 130 thousand domains each month.
-- Designed and developed a replacement [VirusTotal](https://www.virustotal.com/) integration for [PhishER](https://www.knowbe4.com/products/phisher) allowing customers to reliably scan URLs and attachments sent to PhishER with VirusTotal.
-  - The previous system wasn't robust enough to handle the various constraints (imposed by both the business requirements and VirusTotal rate limiting).
-  - Written in Go, utilizing Lambda, and DynamoDB.
-  - Handles over 3 million requests with over 8 million Lambda invocations per month.
-- Assisted with the internal email service design and migration.
-  - Contributed to design decisions and performed code reviews.
-  - Ported the project from MySQL to PostgreSQL due to limitations found in MySQL around performance and transactions.
-  - Written in Go, utilizing Fargate, Arora, and SQS.
-  - Used across the company to send over 40 million emails per month.
-- Individually designed and developed (frontend and backend) the [PhishER](https://www.knowbe4.com/products/phisher): [Threat Map](https://map.knowbe4.com/); a live map of phishing attacks targeted at our customers.
-  - Written in Go & JavaScript, utilizing Fargate, SQS, WebSockets, VueJS, and Canvas.
-  - Used primarily for marketing. Handled over 3 million subscriptions the final month it was on the company homepage (replaced by a simulated view with a link to the live view to reduce costs).
-- Designed and developed many of the core backend services for [PhishER](https://www.knowbe4.com/products/phisher); specifically the rule evaluation engine, [Yara](https://virustotal.github.io/yara/) integration, and Syslog integration.
-  - Written in Go, utilizing [Consistent Hashing](https://en.wikipedia.org/wiki/Consistent_hashing), [Fargate](https://aws.amazon.com/fargate/), [ELB/NLB](https://aws.amazon.com/elasticloadbalancing/network-load-balancer/), [gRPC](https://grpc.io/), [Protobuf](https://developers.google.com/protocol-buffers), [libyara](https://yara.readthedocs.io/en/stable/capi.html), and the TCP, UDP, and TLS packages from the standard library.
-  - Helped invent and patent ([US10812507B2](https://patents.google.com/patent/US10812507B2/)) a method for efficiently processing characteristic detection rules in a rule set.
-- Designed and developed the backend services for many of the free tools created at KnowBe4, including [Email Exposure Check](https://www.knowbe4.com/email-exposure-check/) v2, [Weak Password Test](https://www.knowbe4.com/weak-password-test) v2, [Breached Password Test](https://www.knowbe4.com/breached-password-test), [Password Exposure Test](https://www.knowbe4.com/password-exposure-test), [Second Chance](https://www.knowbe4.com/second-chance) v2, and [Multi-factor Authentication Security Assessment](multi-factor-authentication-security-assessment)
-  - Written in Go, utilizing [Fargate](https://aws.amazon.com/fargate/), [ELB/NLB](https://aws.amazon.com/elasticloadbalancing/network-load-balancer/), [gRPC](https://grpc.io/), [Protobuf](https://developers.google.com/protocol-buffers), and may of the cryptography packages from the standard library.
 
-### FinThrive - Remote
+  
+- Developed a replacement SCIM identity provisioning service to support massive traffic bursts.
+  - The previous open-source system frequently ran out of memory under load and required replacement.
+  - Proposed and led the adoption of Rust for the project due to its performance and predictable memory management.
+  - Designed and implemented a Rust-based Lambda + DynamoDB replacement handling 2.5 M requests/day and >7 K/min bursts, isolated tenant issues, and reduced AWS costs tenfold.
+  - Featured in: [Software Architecture and the Art of Doing it Right the First Time](https://www.knowbe4.com/careers/blogs/engineering/software-architecture-and-the-art-of-doing-it-right-the-first-time)
+- Delivered the backend for [CARA](https://www.knowbe4.com/compliance-audit-readiness-assessment), a [CMMC](https://www.acq.osd.mil/cmmc/) compliance readiness tool.
+  - Took over from a struggling team and met a hard deadline.
+  - Implemented with Python, GraphQL, API Gateway, Lambda, and S3.
+  - Adopted as the foundation for the team's future microservices.
+- Built internal integration microservices to continuously scan customer domains via [EEC](https://www.knowbe4.com/email-exposure-check/) and synchronize results to product and data pipelines.
+  - Implemented in Go using Step Functions, Lambda, SNS, and S3.
+  - Runs ~67 K state machines to scan 130 K+ domains each month.
+- Rebuilt [PhishER](https://www.knowbe4.com/products/phisher)'s VirusTotal integration to support complex upstream rate limits and reliability constraints.
+  - Implemented in Go using Lambda and DynamoDB.
+  - Processes > 3 M requests and 8 M invocations/month.
+- Contributed to the design and migration of the internal email delivery system.
+  - Led migration from MySQL to PostgreSQL to address transactional and performance limitations.
+  - Implemented in Go using Fargate, Aurora, and SQS.
+  - Used across the company to send > 40 M emails/month.
+- Created the [PhishER: Threat Map](https://map.knowbe4.com/): a live map visualizing global phishing activity.
+  - Developed full stack in Go + JavaScript (VueJS & Canvas) with Fargate, SQS, and WebSockets.
+  - Handled > 3 M subscriptions before being replaced on the homepage with a simulated view.
+- Engineered core backend services for [PhishER](https://www.knowbe4.com/products/phisher), including a rule evaluation engine, YARA integration, and Syslog integration.
+  - Implemented using Go, gRPC/Protobuf, libyara, Fargate, ELB/NLB, and consistent hashing for distributed load balancing.
+  - Co-inventor on U.S. Patents: [US10812507B2](https://patents.google.com/patent/US10812507B2/), [US11108791B2](https://patents.google.com/patent/US11108791B2/), [US11902302B2](https://patents.google.com/patent/US11902302B2/) - Systems and methods for efficient combining of characteristic detection rules.
+- Developed backend services for several public tools: [Email Exposure Check](https://www.knowbe4.com/email-exposure-check/), [Weak Password Test](https://www.knowbe4.com/weak-password-test), [Breached Password Test](https://www.knowbe4.com/breached-password-test), [Password Exposure Test](https://www.knowbe4.com/password-exposure-test), [Second Chance](https://www.knowbe4.com/second-chance), and [Multi-factor Authentication Security Assessment](multi-factor-authentication-security-assessment).
+  - Implemented in Go using Fargate, ELB/NLB, gRPC/Protobuf, and cryptographic libraries.
+
+### nThrive - Remote
 #### Senior Systems & Software Engineer - June 2012 to November 2017
-- Designed and developed a proprietary lesson format allowing for engaging and interactive education to reach millions of learners on a wide variety of devices.
-  - Written in JavaScript, utilizing React, Redux, Material Design, SCORM, and xAPI.
-  - Used for over 1,696 lessons taken by millions of medical professionals.
-- Designed and developed an automated lesson building and packaging system that increased productivity dramatically.
-  - Written in Go, utilizing ffmpeg, imagemagick, ghostscript, and inotify.
-  - Used to build 1,073 lessons with a combined 3,619 interactives.
-- Designed and developed a mobile (iOS and Android) application to simplify and search complex hierarchies of medical codes.
-  - Written in JavaScript, utilizing Titanium.
-  - Reached 67th Globally and 1st in Medical on the App Store for several months.
-- Modified and administered an existing learning management system (LMS) allowing it to scale to hundreds of thousands of learners.
-  - Initial modifications in PHP; later, a Go microservice architecture was adopted.
-  - Scaling required rewriting core logic, as well as implementing load balancing (HAProxy + Nginx), caching (Redis), and a distributed filesystem (Ceph.)
-- Contributed to a mobile ready web application allowing physicians and hospital staff to purchase and stream educational seminars and other videos live or on-demand.
-  - Backend in Go, utilizing Authorize.net, RethinkDB (migrated from MongoDB,) and ffmpeg.
-  - Frontend in JavaScript, utilizing AngularJS, VideoJS, and xAPI.
+
+- Created a proprietary interactive lesson format used in 1.6 K+ lessons taken by millions of healthcare professionals.
+  - Implemented in JavaScript using React, Redux, Material Design, SCORM, and xAPI.
+- Automated content packaging using a build system written in Go integrating ffmpeg, ImageMagick, Ghostscript, and inotify.
+  - Produced 1 K+ lessons with 3.6 K+ interactive elements, dramatically improving productivity.
+- Built a mobile application (iOS and Android) to allow searching complex hierarchies of medical codes in JavaScript (Titanium).
+  - Ranked #67 globally and #1 in Medical on the App Store for several months.
+- Modified and administered an existing learning management system (LMS), allowing it to scale to hundreds of thousands of learners.
+  - Transitioned from PHP to Go microservices, introducing Redis caching, HAProxy/Nginx load balancing, and Ceph distributed storage.
+- Developed a web app for live and on-demand streaming of medical seminars.
+  - Frontend in JavaScript using AngularJS, VideoJS, and xAPI.
+  - Backend in Go using Authorize.net, RethinkDB, and ffmpeg.
 
 ### Focus School Software - St. Petersburg, Florida
 #### Software Engineer - March 2010 to June 2012
-- Modified core database functions significantly increasing the performance of the entire application.
-  - Used recursion to replace existing calls to `eval()`.
-  - Performance increase of ~16% across the application.
-- Modified escaping and input libraries to patch security vulnerabilities.
-  - Identified and demonstrated vulnerabilities in the existing regex escaping strategy and led the effort to use the appropriate database escape calls.
-- Developed algorithms used to automatically generate, compare, and update reports sent to the department of education majorly enhancing usability and increasing efficiency.
-  - Written in PHP; interfaced with legacy government mainframe systems.
-- Implemented memcached to reduce the total number of queries executed.
-  - Reduced page load times by as much as 35%.
+- Optimized core data manipulation functions, replacing inefficient and insecure eval() logic with recursion for an application-wide ~16% performance gain.
+- Fixed critical SQL injection vulnerabilities by replacing regex-based escaping with parameterized database calls.
+- Automated generation of Department of Education reports in PHP, simplifying compliance workflows.
+- Integrated memcached caching to cut query load and reduce page times by up to 35%.
 
