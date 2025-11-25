@@ -1,6 +1,6 @@
 # Michael Hanley
 
-[me@hanleym.com](mailto:me@hanleym.com)
+[me@hanleym.com](mailto:me@hanleym.com) | [GitHub](https://github.com/hanleym/) | [LinkedIn](https://www.linkedin.com/in/hanleym1/)
 
 Principal Software Engineer with 15+ years of experience designing distributed systems, CI/CD infrastructure, and backend services in Rust, Go, and C#.
 Deep expertise in NixOS, Kubernetes, and cloud, on-prem, and hybrid architectures.
@@ -29,7 +29,7 @@ Architect and hands-on engineer with a proven record of improving reliability, c
   - Eliminated the flaw and improved throughput.
 - Developed a TUI for provisioning on-prem clusters.
   - Implemented in Rust with Nix-based deployment.
-  - Reduced provisioning time to under 15 minutes.
+  - Reduced provisioning time from ~3 hours to under 15 minutes.
 - Developed a distributed execution engine in C#, then built migration and purge features on top of it.
   - Implemented durable queuing, retries, and coordination between backend services and distributed agents.
   - Supported seamless data migration across AWS S3, GCP, Azure Blob, and S3-compatible services.
@@ -75,7 +75,7 @@ Architect and hands-on engineer with a proven record of improving reliability, c
 - Engineered core backend services for [PhishER](https://www.knowbe4.com/products/phisher), including a rule evaluation engine, YARA integration, and Syslog integration.
   - Implemented using Go, gRPC/Protobuf, libyara, Fargate, ELB/NLB, and consistent hashing for distributed load balancing.
   - Co-inventor on U.S. Patents: [US10812507B2](https://patents.google.com/patent/US10812507B2/), [US11108791B2](https://patents.google.com/patent/US11108791B2/), [US11902302B2](https://patents.google.com/patent/US11902302B2/) - Systems and methods for efficient combining of characteristic detection rules.
-- Developed backend services for several public tools: [Email Exposure Check](https://www.knowbe4.com/email-exposure-check/), [Weak Password Test](https://www.knowbe4.com/weak-password-test), [Breached Password Test](https://www.knowbe4.com/breached-password-test), [Password Exposure Test](https://www.knowbe4.com/password-exposure-test), [Second Chance](https://www.knowbe4.com/second-chance), and [Multi-factor Authentication Security Assessment](multi-factor-authentication-security-assessment).
+- Developed backend services for several public tools: [Email Exposure Check](https://www.knowbe4.com/email-exposure-check/), [Weak Password Test](https://www.knowbe4.com/weak-password-test), [Breached Password Test](https://www.knowbe4.com/breached-password-test), [Password Exposure Test](https://www.knowbe4.com/password-exposure-test), [Second Chance](https://www.knowbe4.com/second-chance), and [Multi-factor Authentication Security Assessment](https://www.knowbe4.com/multi-factor-authentication-security-assessment).
   - Implemented in Go using Fargate, ELB/NLB, gRPC/Protobuf, and cryptographic libraries.
 
 ### nThrive - Remote
